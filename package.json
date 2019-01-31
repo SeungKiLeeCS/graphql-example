@@ -1,0 +1,14 @@
+{
+  "name": "graphql-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Luke Oglesbee <lukewoglesbee@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.3.3",
+    "graphql": "^14.1.1"
+  }
+}
