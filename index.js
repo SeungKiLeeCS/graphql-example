@@ -7,15 +7,23 @@ const resolvers = {
     hello: () => 'world',
     comments: () => {
       return [];
+    },
+    comment: (idk, args) => {
+      return {
+        id: args.id
+      }
     }
   }
 };
 
+// Create the server
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
 
+
+// Start the server
 server.listen().then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`)
 });
