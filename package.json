@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "apollo-server": "^2.3.3",
+    "chance": "^1.0.18",
     "graphql": "^14.1.1",
     "knex": "^0.16.3",
     "lodash.camelcase": "^4.3.0",

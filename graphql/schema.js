@@ -3,10 +3,10 @@ const { gql } = require('apollo-server');
 module.exports = gql`
 
   type Query {
-    feed: [FeedItem!]!
+    getFeed: [FeedItem!]!
 
-    users: [User!]!
-    user(id: ID!): User
+    getUsers: [User!]!
+    getUser(id: ID!): User
   }
 
   type Mutation {

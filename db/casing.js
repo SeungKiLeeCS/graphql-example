@@ -11,7 +11,7 @@ function transform(data, fn) {
     return data.map(item => transform(item, fn));
   }
 
-  if (typeof data === "object") {
+  if (typeof data === 'object') {
     return mapKeys(data, (v, k) => fn(k));
   }
 

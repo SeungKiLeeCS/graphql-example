@@ -1,5 +1,3 @@
-// Update with your config settings.
-
 const { pgConnection } = require('./config');
 
 module.exports = {
@@ -7,10 +5,10 @@ module.exports = {
   connection: pgConnection,
 
   migrations: {
-    directory: "./knex/migrations"
+    directory: './knex/migrations'
   },
 
   seeds: {
-    directory: "./knex/seeds"
+    directory: './knex/seeds'
   }
 };

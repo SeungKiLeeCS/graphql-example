@@ -1,8 +1,8 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('checkins', t => {
     t.increments('id').primary();
-    t.integer('latitude').notNullable();
-    t.integer('longitude').notNullable();
+    t.float('latitude').notNullable();
+    t.float('longitude').notNullable();
     t.integer('user_id').notNullable().references('id').inTable('users');
   });
 };
