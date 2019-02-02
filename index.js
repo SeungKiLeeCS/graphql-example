@@ -4,15 +4,10 @@ const typeDefs = require('./graphql/schema');
 // A map of functions which return data for the schema.
 const resolvers = {
   Query: {
-    hello: () => 'world',
-    comments: () => {
-      return [];
-    },
-    comment: (idk, args) => {
-      return {
-        id: args.id
-      }
-    }
+    user: () => ({
+      id: '1234',
+      name: 'Bo Jangles'
+    })
   }
 };
 

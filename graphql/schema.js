@@ -3,21 +3,48 @@ const { gql } = require('apollo-server');
 module.exports = gql`
 
   type Query {
-    "A simple type for getting started"
-    hello: String
+    feed: [FeedItem!]!
 
-    "Get all comments"
-    comments: [Comment!]!
+    users: [User!]!
+    user(id: ID!): User
+  }
 
-    "Get a single comment by its id"
-    comment(id: ID): Comment
+  type Mutation {
+    createPost: Post
+    createCheckin: Checkin
   }
 
   """
-  Comment on a post or something else of interest!
+  Can comment types, so documentation is built in
   """
-  type Comment {
-    id: ID
-    content: String
+  type User {
+    id: ID!
+    "Can comment fields as well"
+    name: String!
+    picture: String!
+
+    posts: [Post!]!
   }
+
+  type Post {
+    id: ID!
+    content: String!
+    "User who made the post"
+    user: User!
+  }
+
+  type Checkin {
+    id: ID!
+    latitude: Int!
+    longitude: Int!
+    user: User!
+  }
+
+  type Ad {
+    id: ID!
+    content: String!
+    link: String
+  }
+
+  union FeedItem = Post | Checkin | Ad
 `;
