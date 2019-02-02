@@ -5,8 +5,10 @@
   "author": "Luke Oglesbee <lukewoglesbee@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "start:dev": "nodemon index.js"
+    "dev:setup": "./bin/setup.sh",
+    "dev:start": "./bin/start.sh",
+    "dev:clean": "./bin/clean.sh",
+    "start": "node index.js"
   },
   "dependencies": {
     "apollo-server": "^2.3.3",
