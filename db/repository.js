@@ -26,7 +26,7 @@ class Repository {
   }
 
   denormalize(data) {
-    return camelCase(data)
+    return { ...camelCase(data), __type: this.table };
   }
 
   async create(data) {
@@ -55,7 +55,7 @@ class Repository {
 
   async list(filter) {
     const records = await this.where(filter);
-    return records.map(this.denormalize);
+    return records.map(r => this.denormalize(r));
   }
 }
 

@@ -14,7 +14,8 @@ exports.seed = async function(knex, Promise) {
     futures.push(checkinRepo.create({
       userId: chance.pickone(users).id,
       latitude: chance.latitude(),
-      longitude: chance.longitude()
+      longitude: chance.longitude(),
+      createdAt: chance.date({ year: 2018 })
     }));
   }
 

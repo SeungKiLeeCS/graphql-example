@@ -13,7 +13,8 @@ exports.seed = async function(knex, Promise) {
   for (let i = 0; i < 100; i ++) {
     futures.push(postRepo.create({
       userId: chance.pickone(users).id,
-      content: chance.sentence()
+      content: chance.sentence(),
+      createdAt: chance.date({ year: 2018 })
     }));
   }
 

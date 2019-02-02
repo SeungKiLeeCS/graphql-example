@@ -35,8 +35,8 @@ module.exports = gql`
 
   type Checkin {
     id: ID!
-    latitude: Int!
-    longitude: Int!
+    latitude: Float!
+    longitude: Float!
     user: User!
   }
 
