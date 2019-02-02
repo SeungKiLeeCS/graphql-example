@@ -5,9 +5,10 @@
   "author": "Luke Oglesbee <lukewoglesbee@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev:setup": "./bin/setup.sh",
-    "dev:start": "./bin/start.sh",
-    "dev:clean": "./bin/clean.sh",
+    "docker:setup": "./bin/setup.sh",
+    "docker:start": "./bin/start.sh",
+    "docker:clean": "./bin/clean.sh",
+    "start:dev": "nodemon index.js",
     "start": "node index.js"
   },
   "dependencies": {
