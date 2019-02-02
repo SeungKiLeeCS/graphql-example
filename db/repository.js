@@ -30,13 +30,17 @@ class Repository {
   }
 
   async create(data) {
-    const obj = this.normalize(data);
+    const now = new Date();
+    const obj = this.normalize({ createdAt: now, updatedAt: now, ...data });
+
     const [record] = await this.qb.insert(obj).returning('*');
     return this.denormalize(record);
   }
 
   async update(filter, data) {
-    const changes = this.normalize(data);
+    const now = new Date();
+    const changes = this.normalize({ updatedAt: now, ...data });
+
     return this.where(filter).update(changes);
   }
 

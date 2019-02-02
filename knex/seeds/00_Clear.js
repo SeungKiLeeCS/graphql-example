@@ -1,7 +1,7 @@
 exports.seed = async function(knex, Promise) {
   const whitelist = ['knex_migrations', 'knex_migrations_lock'];
   const data = await knex.raw(
-    'SELECT tablename FROM pg_tables WHERE schemaname='public''
+    "SELECT tablename FROM pg_tables WHERE schemaname='public'"
   );
 
   const tables = data.rows
